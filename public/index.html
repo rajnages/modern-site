@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Full Stack Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Add these in the head section -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <a href="/">Brand<span>Name</span></a>
+      </div>
+
+      <!-- Search -->
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search..." />
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <div class="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <div class="auth-buttons">
+        <button class="btn login-btn" onclick="showModal('login')">
+          Login
+        </button>
+        <button class="btn register-btn" onclick="showModal('register')">
+          Register
+        </button>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-content">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+      <div class="hero-content">
+        <h1 class="animate-text">Welcome to Modern Website</h1>
+        <p class="animate-text-delay">
+          Experience the next generation of web development
+        </p>
+        <!-- Hero Badges -->
+        <div class="hero-badges">
+          <span class="badge">
+            <i class="fas fa-star"></i>
+            4.9/5 Rating
+          </span>
+          <span class="badge">
+            <i class="fas fa-users"></i>
+            1000+ Users
+          </span>
+        </div>
+        <button class="cta-btn animate-text-delay">Get Started</button>
+      </div>
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="hero-image animate-fade-in">
+        <img src="images/hero-image.svg" alt="Hero Image" />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features" data-aos="fade-up">
+      <h2 class="section-title">Our Features</h2>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-rocket"></i>
+          <h3>Fast Performance</h3>
+          <p>Lightning-fast load times and smooth interactions</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Secure</h3>
+          <p>Enterprise-level security and data protection</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Responsive</h3>
+          <p>Perfect display on all devices and screen sizes</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about" data-aos="fade-up">
+      <div class="about-content">
+        <h2 class="section-title">About Us</h2>
+        <p class="about-text">
+          We are a team of passionate developers dedicated to creating modern,
+          efficient, and user-friendly web solutions.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <h3>100+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <h3>50+</h3>
+            <p>Team Members</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact" data-aos="fade-up">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>123 Web Street, Digital City, 12345</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <p>+1 234 567 8900</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p>contact@example.com</p>
+          </div>
+        </div>
+        <form class="contact-form" data-aos="fade-left">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Auth Modals -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn submit-btn">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Register</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerUsername">Username</label>
+            <input
+              type="text"
+              id="registerUsername"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input
+              type="email"
+              id="registerEmail"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input
+              type="password"
+              id="registerPassword"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+    <!-- Dashboard Section (Initially Hidden) -->
+    <div
+      id="dashboardSection"
+      class="dashboard-container"
+      style="display: none"
+    >
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <div class="user-profile">
+          <div class="avatar">
+            <img
+              src="images/default-avatar.png"
+              alt="User Profile"
+              id="userAvatar"
+            />
+            <div class="edit-avatar">
+              <i class="fas fa-camera"></i>
+            </div>
+          </div>
+          <h3 id="userName">Welcome</h3>
+          <p id="userEmail" class="user-email"></p>
+        </div>
+
+        <nav class="dashboard-nav">
+          <a href="#dashboard" class="active">
+            <i class="fas fa-th-large"></i> Dashboard
+          </a>
+          <a href="#my-projects">
+            <i class="fas fa-project-diagram"></i> My Projects
+          </a>
+          <a href="#payments"> <i class="fas fa-credit-card"></i> Payments </a>
+          <a href="#settings"> <i class="fas fa-cog"></i> Settings </a>
+          <button onclick="logout()" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Main Dashboard Content -->
+      <main class="dashboard-main">
+        <header class="dashboard-header">
+          <h2>My Dashboard</h2>
+          <div class="header-actions">
+            <div class="notification-bell">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge">3</span>
+            </div>
+            <button class="new-project-btn">
+              <i class="fas fa-plus"></i> New Project
+            </button>
+          </div>
+        </header>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid">
+          <!-- Premium Project Card -->
+          <div class="project-card premium">
+            <div class="project-badge">Premium</div>
+            <div class="project-header">
+              <h3>Premium Website</h3>
+              <span class="price">$99</span>
+            </div>
+            <div class="project-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Custom Domain</li>
+                <li><i class="fas fa-check"></i> SSL Certificate</li>
+                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                <li><i class="fas fa-check"></i> Analytics</li>
+              </ul>
+            </div>
+            <button class="payment-btn" onclick="initiatePayment('premium')">
+              Purchase Now
+            </button>
+          </div>
+
+          <!-- Standard Project Card -->
+          <div class="project-card standard">
+            <div class="project-badge">Standard</div>
+            <div class="project-header">
+              <h3>Business Website</h3>
+              <span class="price">$49</span>
+            </div>
+            <div class="project-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Responsive Design</li>
+                <li><i class="fas fa-check"></i> 5 Pages</li>
+                <li><i class="fas fa-check"></i> Basic SEO</li>
+                <li><i class="fas fa-check"></i> Contact Form</li>
+              </ul>
+            </div>
+            <button class="payment-btn" onclick="initiatePayment('standard')">
+              Purchase Now
+            </button>
+          </div>
+
+          <!-- Basic Project Card -->
+          <div class="project-card basic">
+            <div class="project-badge">Basic</div>
+            <div class="project-header">
+              <h3>Starter Website</h3>
+              <span class="price">$29</span>
+            </div>
+            <div class="project-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Single Page</li>
+                <li><i class="fas fa-check"></i> Mobile Friendly</li>
+                <li><i class="fas fa-check"></i> Basic Design</li>
+                <li><i class="fas fa-check"></i> Email Support</li>
+              </ul>
+            </div>
+            <button class="payment-btn" onclick="initiatePayment('basic')">
+              Purchase Now
+            </button>
+          </div>
+        </section>
+
+        <!-- Active Projects Section -->
+        <section class="active-projects">
+          <h3>Active Projects</h3>
+          <div class="projects-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Project Name</th>
+                  <th>Status</th>
+                  <th>Progress</th>
+                  <th>Due Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>E-commerce Website</td>
+                  <td>
+                    <span class="status-badge in-progress">In Progress</span>
+                  </td>
+                  <td>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 75%"></div>
+                    </div>
+                  </td>
+                  <td>2024-03-15</td>
+                  <td>
+                    <button class="action-btn view">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Add more project rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal payment-modal">
+      <div class="modal-content payment-content">
+        <span class="close">&times;</span>
+        <h2>Complete Your Purchase</h2>
+        <div class="payment-details">
+          <div class="selected-plan">
+            <h3>Selected Plan: <span id="planName">Premium</span></h3>
+            <p>Total: <span id="planPrice">$99</span></p>
+          </div>
+          <form id="payment-form">
+            <div class="form-group">
+              <label>Card Number</label>
+              <div id="card-element"></div>
+            </div>
+            <div id="card-errors" class="payment-errors"></div>
+            <button type="submit" class="payment-submit-btn">
+              <span id="button-text">Pay Now</span>
+              <div class="spinner hidden" id="spinner"></div>
+            </button>
+          </form>
+          <div class="payment-methods">
+            <img
+              src="images/payment-methods.png"
+              alt="Accepted Payment Methods"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Modern web solutions for modern businesses.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Newsletter Section -->
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 BrandName. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie Consent -->
+    <div id="cookieConsent" class="cookie-consent">
+      <p>
+        We use cookies to enhance your experience. By continuing to visit this
+        site you agree to our use of cookies.
+      </p>
+      <button onclick="acceptCookies()" class="btn cookie-btn">Accept</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
